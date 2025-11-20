@@ -20,7 +20,8 @@ void bn_free(BigNum* a);
 /* Operations */
 int bn_compare(const BigNum* A, const BigNum* B);
 BigNum* bn_add(const BigNum* A, const BigNum* B);
-BigNum* bn_sub(const BigNum* A, const BigNum* B);   /* returns 0 if A < B */
+BigNum* bn_sub(const BigNum* A, const BigNum* B);
 BigNum* bn_mul(const BigNum* A, const BigNum* B);
+BigNum* bn_mul_single(const BigNum* A, int d, int shift);
 
 #endif
