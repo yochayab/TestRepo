@@ -13,7 +13,7 @@ static Link* node_new(int d) {
 }
 
 BigNum* bn_from_string(const char* s) {
-    if (!s)
+    if (!s || *s < '0' || *s > '9')
         return NULL;
     BigNum* num = malloc(sizeof(BigNum));
     num->head = NULL;
@@ -23,7 +23,7 @@ BigNum* bn_from_string(const char* s) {
         s++;
     }
     if(*s == '\0')
-    {
+    {   
         num->head = num->tail = node_new(0);
         return num;
     }
